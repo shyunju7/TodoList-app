@@ -5,7 +5,7 @@ export const Template = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 600px;
-  background-color: #fff1e6;
+  background-color: #f9fafe;
   padding-top: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 `;

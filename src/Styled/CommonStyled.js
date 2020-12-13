@@ -7,7 +7,7 @@ export const Div = styled.div`
   margin: 5% 30%;
   padding: 10%;
   font-weight: bold;
-  color: 586da2;
+  color: #586da2;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   background: ${(props) => props.color || "#F9FAFE"};
 `;
@@ -33,12 +33,5 @@ export const Text = styled.label`
   font-size: 12px;
 `;
 
-export const Title = styled.h1`
-  display: inline;
-  
-`;
 
-export const TitleBox = styled.div`
-  display: inline;
-  
-`;
+
