@@ -13,6 +13,7 @@ export const Title = styled.h1`
   text-align: center;
   font-size: 40px;
   margin: 0;
+  padding-top : 5px;
   padding-bottom: 10px;
   color: #33364d;
   font-family: Consolas;

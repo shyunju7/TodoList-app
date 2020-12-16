@@ -11,8 +11,10 @@ import Login from "../Page/Login";
 import SignUp from "../Page/SignUp";
 import ModifyMyInfo from "../Page/ModifyMyInfo";
 import { useSelector } from "react-redux";
-import TodoPage from "../Page/Todo";
+import TodoPage from "../Page/MyTodo";
 import Header from "../Components/Header";
+import TeamTodo from "../Page/TeamTodo";
+import MyTodo from "../Page/MyTodo";
 const AppRouter = () => {
   const isLogin = useSelector((state) => state.loginReducer.isLogin);
 
@@ -21,7 +23,8 @@ const AppRouter = () => {
       <Router>
         <Header />
         <Switch>
-          <Route component={TodoPage} path="/" exact={true} />
+          <Route component={MyTodo} path="/" exact={true} />
+          <Route component={TeamTodo} path="/team/Todo"  />
           <Route component={MyPage} path="/mypage" />
           <Route component={ModifyMyInfo} path="/modifymyinfo" />
           <Route component={NotFound} path="/404" />

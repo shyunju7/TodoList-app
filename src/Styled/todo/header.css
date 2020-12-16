@@ -14,12 +14,12 @@
 }
 
 .menu-item:hover,
-.menu-item:active {
+.menu-item:active .menu-item.active {
   background: #3b3e59;
 }
 
 .logout-box {
-  padding-top: 200px;
+  padding-top: 300px;
 }
 
 .logout {

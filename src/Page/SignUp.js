@@ -13,7 +13,7 @@ const SignUp = ({ history }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
   const [confirmPw, setConfirmPw] = useState("");
-  const [teamId, setTeamId] = useState(null);
+  const [teamId, setTeamId] = useState("");
   const [idCheck, setIdCheck] = useState(false);
   const [pwCheck, setPwCheck] = useState(true);
 
@@ -67,7 +67,7 @@ const SignUp = ({ history }) => {
     setUserId("");
     setUserPw("");
     setConfirmPw("");
-    setTeamId(null);
+    setTeamId("");
   }, [setUserId, setUserPw, setConfirmPw, setTeamId]);
 
   const createUser = useCallback(() => {

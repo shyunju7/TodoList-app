@@ -1,11 +1,13 @@
-import { IconBox, Label, MenuBar, UserBox } from "../Styled/todo/main-styled";
+import { IconBox, Label, MenuBar, UserBox } from "../Styled/todo/header-styled";
 import { Link } from "react-router-dom";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../Styled/todo/header.css";
 import {logout} from "../reducer/login";
-const MenuItem = ({ children, to }) => (
-  <Link to={to} className="menu-item">
+import {Router} from "@material-ui/icons";
+
+const MenuItem = ({onClick, children, to }) => (
+  <Link to={to} className='menu-item' onClick={onClick}>
     {children}
   </Link>
 );
@@ -17,6 +19,8 @@ const Header = () => {
   const onClickLogout = () => {
       dispatch(logout());
   };
+
+
   return (
     <MenuBar>
       <UserBox>
@@ -25,7 +29,7 @@ const Header = () => {
       </UserBox>
       <MenuItem to="/myPage">MyPage</MenuItem>
       <MenuItem to="/">MyTodo</MenuItem>
-      <MenuItem to="/">TeamTodo</MenuItem>
+      <MenuItem to="/team/todo">TeamTodo</MenuItem>
       <div className="logout-box">
         <label className="logout" onClick={onClickLogout}>Logout</label>
       </div>

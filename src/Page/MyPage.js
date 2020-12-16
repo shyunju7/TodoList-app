@@ -1,9 +1,11 @@
 import React from "react";
-import { Div, Button, Text } from "../Styled/login/commonStyled";
+import { Button, Text } from "../Styled/login/commonStyled";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteUser } from "../reducer/user";
 import {logout} from "../reducer/login";
+import {Title} from "../Styled/todo/common-styled";
+import {Label} from "../Styled/todo/header-styled";
 
 const MyPage = ({ history }) => {
   const users = useSelector((state) => state.userReducer.users);
@@ -22,19 +24,18 @@ const MyPage = ({ history }) => {
   };
 
   return (
-      <h1> MYPAGE </h1>
-    // <div>
-    //   <h1>MY PAGE</h1>
-    //   <Text name="userId">ID: {userId}</Text>
-    //   <br />
-    //   <Text name="userPw">PASSWORD:{findUser.userPw} </Text>
-    //   <br />
-    //   <br />
-    //   <Link to="/modifymyinfo">
-    //     <Button> 비밀번호 변경하기 </Button>
-    //     <Button onClick={unsubscribe}> 회원 탈퇴하기 </Button>
-    //   </Link>
-    // </div>
+    <div>
+      <Title>MY PAGE</Title>
+      <h3 name="userId">ID: {userId}</h3>
+      <br />
+      <Text name="userPw">PASSWORD:{findUser.userPw} </Text>
+      <br />
+      <br />
+      <Link to="/modifymyinfo">
+        <Button> 비밀번호 변경하기 </Button>
+        <Button onClick={unsubscribe}> 회원 탈퇴하기 </Button>
+      </Link>
+    </div>
   );
 };
 
