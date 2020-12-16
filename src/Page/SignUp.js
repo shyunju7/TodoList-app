@@ -2,13 +2,12 @@ import React, { useCallback, useRef, useState, useEffect } from "react";
 import { Div } from "../Styled/CommonStyled";
 import {
   ErrorMsg,
-  Input,
   InputDiv,
-  Label,
-  Button,
 } from "../Styled/SignUpStyled";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../reducer/user";
+import {Title} from "../Styled/todo/common-styled";
+import {Button, Label, Input} from "../Styled/CommonStyled";
 
 const SignUp = ({ history }) => {
   const [userId, setUserId] = useState("");
@@ -93,7 +92,7 @@ const SignUp = ({ history }) => {
 
   return (
     <Div>
-      <h1> 회원가입 </h1>
+      <Title>SIGN UP</Title>
       <InputDiv>
         <Label>아이디</Label>
         <Input
@@ -105,6 +104,15 @@ const SignUp = ({ history }) => {
         />
 
         {!idCheck && <ErrorMsg>중복된 아이디입니다.</ErrorMsg>}
+
+        <Label>소속</Label>
+        <Input
+          name="teamId"
+          placeholder="소속 입력"
+          onChange={onChange}
+          value={teamId}
+          required
+        />
 
         <br />
         <Label>비밀번호</Label>
@@ -129,14 +137,6 @@ const SignUp = ({ history }) => {
 
         {pwCheck && <p></p>}
         {!pwCheck && <ErrorMsg>비밀번호가 일치하지않습니다!</ErrorMsg>}
-        <Label>소속</Label>
-        <Input
-          name="teamId"
-          placeholder="소속 입력"
-          onChange={onChange}
-          value={teamId}
-          required
-        />
 
         <Button onClick={createUser}> 가입하기 </Button>
       </InputDiv>

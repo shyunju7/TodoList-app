@@ -1,0 +1,41 @@
+.menu-item {
+  display: block;
+  width: 300px;
+  background: transparent;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: Consolas;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 12px 0;
+}
+
+.menu-item:hover,
+.menu-item:active {
+  background: #3b3e59;
+}
+
+.logout-box {
+  padding-top: 200px;
+}
+
+.logout {
+  display: block;
+  color : white;
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+  font-family: Consolas;
+  font-weight: bold;
+  text-decoration: none;
+  color: #F28366;
+  cursor: pointer;
+}
+
+.logout:hover,
+.logout:active {
+  color: #CC6E56;
+}

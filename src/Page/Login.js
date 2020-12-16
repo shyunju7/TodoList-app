@@ -1,10 +1,11 @@
 import React, { useCallback, useState } from "react";
 import { Div, Button } from "../Styled/CommonStyled";
 import { Link } from "react-router-dom";
-import { Input, Label } from "../Styled/LoginStyled";
+import { Input, Label } from "../Styled/CommonStyled";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../reducer/login";
-
+import "../Styled/login.css";
+import {Title} from "../Styled/todo/common-styled";
 const Login = () => {
   const users = useSelector((state) => state.userReducer.users);
   const dispatch = useDispatch();
@@ -66,7 +67,7 @@ const Login = () => {
 
   return (
     <Div>
-      <h1>LOGIN</h1>
+      <Title>LOGIN</Title>
       <Label>아이디</Label>
       <Input
         name="userId"
@@ -91,7 +92,7 @@ const Login = () => {
       <Button onClick={onLogin}> 로그인 </Button>
       <br />
       <br />
-      <Link to="/signup">회원가입하기</Link>
+      <Link to="/signup" className="signup">회원가입하기</Link>
     </Div>
   );
 };

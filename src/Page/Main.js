@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Text } from "../Styled/CommonStyled";
+
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../reducer/login";
 import TodoTemplate from "../Components/TodoTemplate";
 import TodoInput from "../Components/TodoInput";
 import TodoList from "../Components/TodoList";
-import { Menu, MenuItem, Title } from "../Styled/MainStyled";
 
-const Main = () => {
-  const userId = useSelector((state) => state.loginReducer.loginUser);
+import { MainView } from "../Styled/todo/main-styled";
+import Header from "../Components/Header";
+
+const Main = ({ children }) => {
   const dispatch = useDispatch();
 
   const onClickLogout = () => {
@@ -18,16 +19,8 @@ const Main = () => {
 
   return (
     <div>
-      <Menu>
-        <MenuItem><Link to="/">MyTodo</Link></MenuItem>
-        <MenuItem><Link to="/myPage">MyPage</Link></MenuItem>
-        <MenuItem onClick={onClickLogout}> Logout</MenuItem>
-      </Menu>
-
-      <TodoTemplate>
-        <TodoInput />
-        <TodoList />
-      </TodoTemplate>
+      <Header />
+      <MainView>{children}</MainView>
     </div>
   );
 };

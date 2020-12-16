@@ -6,12 +6,14 @@ export const Template = styled.div`
   margin-right: auto;
   width: 600px;
   background-color: #f9fafe;
-  padding-top: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 `;
 
 export const Title = styled.h1`
-    text-align : center;
-    font-size : 3rem;
-    margin : 0;
+  text-align: center;
+  font-size: 40px;
+  margin: 0;
+  padding-bottom: 10px;
+  color: #33364d;
+  font-family: Consolas;
 `;

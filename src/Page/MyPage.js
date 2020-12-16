@@ -22,18 +22,19 @@ const MyPage = ({ history }) => {
   };
 
   return (
-    <Div>
-      <h1>MY PAGE</h1>
-      <Text name="userId">ID: {userId}</Text>
-      <br />
-      <Text name="userPw">PASSWORD:{findUser.userPw} </Text>
-      <br />
-      <br />
-      <Link to="/modifymyinfo">
-        <Button> 비밀번호 변경하기 </Button>
-        <Button onClick={unsubscribe}> 회원 탈퇴하기 </Button>
-      </Link>
-    </Div>
+      <h1> MYPAGE </h1>
+    // <div>
+    //   <h1>MY PAGE</h1>
+    //   <Text name="userId">ID: {userId}</Text>
+    //   <br />
+    //   <Text name="userPw">PASSWORD:{findUser.userPw} </Text>
+    //   <br />
+    //   <br />
+    //   <Link to="/modifymyinfo">
+    //     <Button> 비밀번호 변경하기 </Button>
+    //     <Button onClick={unsubscribe}> 회원 탈퇴하기 </Button>
+    //   </Link>
+    // </div>
   );
 };
 

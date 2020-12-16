@@ -1,0 +1,17 @@
+.signup {
+    display: block;
+    text-align: center;
+    align-items: center;
+    font-size: 15px;
+    font-family: Consolas;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    color : #3b3e59;
+    padding: 12px 0;
+}
+
+.signup:hover,
+.signup:active {
+    color : #282c34;
+}
