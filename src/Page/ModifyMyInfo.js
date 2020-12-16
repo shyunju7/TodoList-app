@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Div, Button, Text } from "../Styled/CommonStyled";
+import { Div, Button, Text } from "../Styled/login/commonStyled";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { modifyPw } from "../reducer/user";

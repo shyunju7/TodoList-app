@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
-import { Div, Button } from "../Styled/CommonStyled";
+import { Div, Button } from "../Styled/login/commonStyled";
 import { Link } from "react-router-dom";
-import { Input, Label } from "../Styled/CommonStyled";
+import { Input, Label } from "../Styled/login/commonStyled";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../reducer/login";
-import "../Styled/login.css";
+import "../Styled/login/login.css";
 import {Title} from "../Styled/todo/common-styled";
 const Login = () => {
   const users = useSelector((state) => state.userReducer.users);

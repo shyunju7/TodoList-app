@@ -1,6 +1,6 @@
 import React from "react";
 import { BiError } from "react-icons/bi";
-import {Div} from "../Styled/CommonStyled";
+import {Div} from "../Styled/login/commonStyled";
 const NotFound = () => {
   return (
     <Div>
