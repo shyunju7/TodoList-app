@@ -4,7 +4,6 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../Styled/todo/header.css";
 import {logout} from "../reducer/login";
-import {Router} from "@material-ui/icons";
 
 const MenuItem = ({onClick, children, to }) => (
   <Link to={to} className='menu-item' onClick={onClick}>
@@ -29,7 +28,7 @@ const Header = () => {
       </UserBox>
       <MenuItem to="/myPage">MyPage</MenuItem>
       <MenuItem to="/">MyTodo</MenuItem>
-      <MenuItem to="/team/todo">TeamTodo</MenuItem>
+      <MenuItem to="/mycalendar">MyCalendar</MenuItem>
       <div className="logout-box">
         <label className="logout" onClick={onClickLogout}>Logout</label>
       </div>

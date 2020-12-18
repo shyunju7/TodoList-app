@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from "react";
-import { Div, Button, Text } from "../Styled/login/commonStyled";
-import { Link } from "react-router-dom";
+import { Button, Text } from "../Styled/login/commonStyled";
 import { useSelector, useDispatch } from "react-redux";
 import { modifyPw } from "../reducer/user";
+import {withRouter} from "react-router-dom";
 
-const ModifyMyInfo = ({ history }) => {
+const ModifyMyInfo = ({history}) => {
   const users = useSelector((state) => state.userReducer.users);
   const userId = useSelector((state) => state.loginReducer.loginUser);
 
@@ -23,23 +23,15 @@ const ModifyMyInfo = ({ history }) => {
     dispatch(modifyPw(userId, userPw));
 
     alert("정상적으로 수정되었습니다.");
-    history.replace("/mypage");
+
   };
 
   return (
-    <Div>
-      <h1>MY PAGE</h1>
-      <Text name="userId">ID: {userId}</Text>
-      <br />
+    <div>
       <Text>PASSWORD: </Text>
       <input name="userPw" value={userPw} onChange={onChange}></input>
-      <br />
-      <br />
-      <Button onClick={modifyUserInfo}> 수정 완료 </Button>
-      <Link to="/mypage">
-        <Button> 취소 </Button>
-      </Link>
-    </Div>
+      <Button onClick={modifyUserInfo}> 저장 </Button>
+    </div>
   );
 };
 
