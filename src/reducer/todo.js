@@ -63,11 +63,6 @@ const initState = {
 
 export default function todoReducer(state = initState, { type, payload }) {
   switch (type) {
-    case CALL_TODO:
-      return {
-        ...state,
-        todos: state.todos.filter((todo) => todo.userId === payload.userId),
-      };
     case INSERT_TODO:
       return {
         ...state,

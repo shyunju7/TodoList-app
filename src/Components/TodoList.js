@@ -1,12 +1,10 @@
-import React, { useCallback } from "react";
+import React from "react";
 import TodoItem from "./TodoItem";
 import { useSelector } from "react-redux";
 
 const TodoList = () => {
   const todos = useSelector((state) => state.todoReducer.todos);
   const userId = useSelector((state) => state.loginReducer.loginUser);
-
-  console.log(todos);
 
   return (
     <div>
