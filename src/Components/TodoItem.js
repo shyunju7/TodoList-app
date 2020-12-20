@@ -10,6 +10,7 @@ import { todoDelete, todoToggle, todoUpdate } from "../reducer/todo";
 import { FaRegSquare, FaRegCheckSquare } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { BiPencil } from "react-icons/bi";
+
 const TodoItem = ({ todo }) => {
   const { id, text, isCompleted } = todo;
   const [readOnly, setReadOnly] = useState(true);
@@ -53,7 +54,7 @@ const TodoItem = ({ todo }) => {
           <BiPencil size="25px" color="#a5a58d" />
         </Button>
       ) : (
-        <></>
+        <div />
       )}
 
       <Button onClick={() => dispatch(todoDelete(id))}>

@@ -27,7 +27,10 @@ export const deleteUser = (userId) => {
 };
 
 const initState = {
-  users: [{ userId: "admin", userPw: "1111", teamId: "A" }],
+  users: [
+    { userId: "admin", userPw: "1111", teamId: "A" },
+    { userId: "1", userPw: "1", teamId: "A" },
+  ],
 };
 
 export default function userReducer(state = initState, { type, payload }) {

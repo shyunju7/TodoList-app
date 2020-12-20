@@ -1,10 +1,15 @@
 import React, { useRef, useState } from "react";
-import { AddButton, Input, TodoInputBox } from "../Styled/todo/todoInput-styled";
-import { useDispatch } from "react-redux";
+import {
+  AddButton,
+  Input,
+  TodoInputBox,
+} from "../Styled/todo/todoInput-styled";
+import { useDispatch, useSelector } from "react-redux";
 import { todoInsert } from "../reducer/todo";
 
 const TodoInput = () => {
   const [todoInput, setTodoInput] = useState("");
+  const userId = useSelector((state) => state.loginReducer.loginUser);
   let nextId = useRef(2);
   const dispatch = useDispatch();
 
@@ -28,7 +33,7 @@ const TodoInput = () => {
       return;
     }
 
-    dispatch(todoInsert(nextId.current, todoInput));
+    dispatch(todoInsert(userId, nextId.current, todoInput));
     nextId.current += 1;
     onRemove();
   };

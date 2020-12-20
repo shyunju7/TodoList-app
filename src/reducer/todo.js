@@ -1,14 +1,26 @@
 import {
+  CALL_TODO,
   DELETE_TODO,
   INSERT_TODO,
   TOGGLE_TODO,
   UPDATE_TODO,
 } from "../action/todo";
 
-export const todoInsert = (id, text) => {
+export const todoCall = (userId) => {
+  return {
+    type: CALL_TODO,
+    payload: {
+      userId: userId,
+    },
+  };
+};
+
+export const todoInsert = (userId, id, text) => {
   return {
     type: INSERT_TODO,
     payload: {
+      userId: userId,
+      isShared: false,
       id: id,
       text: text,
       isCompleted: false,
@@ -51,10 +63,17 @@ const initState = {
 
 export default function todoReducer(state = initState, { type, payload }) {
   switch (type) {
+    case CALL_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.userId === payload.userId),
+      };
     case INSERT_TODO:
       return {
         ...state,
         todos: state.todos.concat({
+          userId: payload.userId,
+          isShared: false,
           id: payload.id,
           text: payload.text,
           isCompleted: false,
