@@ -10,7 +10,8 @@ import { todoInsert } from "../reducer/todo";
 const TodoInput = () => {
   const [todoInput, setTodoInput] = useState("");
   const userId = useSelector((state) => state.loginReducer.loginUser);
-  let nextId = useRef(2);
+  let nextId = useRef(3);
+  //const randomNum = Math.random().toString(36).substr(2,11).toUpperCase();
   const dispatch = useDispatch();
 
   const onChangeInput = (e) => {

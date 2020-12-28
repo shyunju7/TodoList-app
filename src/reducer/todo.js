@@ -6,15 +6,6 @@ import {
   UPDATE_TODO,
 } from "../action/todo";
 
-export const todoCall = (userId) => {
-  return {
-    type: CALL_TODO,
-    payload: {
-      userId: userId,
-    },
-  };
-};
-
 export const todoInsert = (userId, id, text) => {
   return {
     type: INSERT_TODO,
@@ -49,6 +40,13 @@ export const todoDelete = (id) => {
   };
 };
 
+export const todoCall = (userId) => {
+  return {
+    type: CALL_TODO,
+    payload: { userId: userId },
+  };
+};
+
 const initState = {
   todos: [
     {
@@ -56,6 +54,13 @@ const initState = {
       isShared: false,
       id: 1,
       text: "TODOLIST 만들기",
+      isCompleted: false,
+    },
+    {
+      userId: "1",
+      isShared: false,
+      id: 2,
+      text: "TODOLIST 테스트",
       isCompleted: false,
     },
   ],
@@ -83,7 +88,6 @@ export default function todoReducer(state = initState, { type, payload }) {
             : todo
         ),
       };
-
     case UPDATE_TODO:
       return {
         ...state,
@@ -95,6 +99,11 @@ export default function todoReducer(state = initState, { type, payload }) {
       return {
         ...state,
         todos: state.todos.filter((todo) => todo.id !== payload.id),
+      };
+    case CALL_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.userId === payload.userId),
       };
     default:
       return { ...state };
