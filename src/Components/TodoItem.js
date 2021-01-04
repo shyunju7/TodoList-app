@@ -1,9 +1,10 @@
 import React, { useCallback, useState } from "react";
 import {
-    Button,
-    CheckBox, Hr,
-    TextBox,
-    TodoItemBox,
+  Button,
+  CheckBox,
+  Hr,
+  TextBox,
+  TodoItemBox,
 } from "../Styled/todo/todoItem-styled";
 import { useDispatch } from "react-redux";
 import { todoDelete, todoToggle, todoUpdate } from "../reducer/todo";
@@ -61,7 +62,6 @@ const TodoItem = ({ todo }) => {
         <TiDeleteOutline size="30px" color="#e56b6f" />
       </Button>
     </TodoItemBox>
-
   );
 };
 

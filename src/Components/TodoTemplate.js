@@ -1,5 +1,6 @@
 import React from "react";
 import {Date, SubTitle, Template, Title} from "../Styled/todo/common-styled";
+import MyCalendar from "../Page/MyCalendar";
 
 const TodoTemplate = ({ children }) => {
 
@@ -7,7 +8,7 @@ const TodoTemplate = ({ children }) => {
     <div>
       <Template>
         <Date> Today </Date>
-        <SubTitle>2021/01/10</SubTitle>
+        <SubTitle><MyCalendar/></SubTitle>
 
         {children}
       </Template>

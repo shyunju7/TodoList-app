@@ -46,7 +46,9 @@ const TodoInput = () => {
         value={todoInput}
         placeholder="new Todo"
       />
-      <AddButton onClick={addTodo}><VscAdd/></AddButton>
+      <AddButton onClick={addTodo}>
+        <VscAdd />
+      </AddButton>
     </TodoInputBox>
   );
 };

@@ -8,33 +8,23 @@ import { CgAdd } from "react-icons/cg";
 import InputModal from "../Components/InputModal";
 import SubTodoTitle from "../Components/SubTitleBar";
 const MyTodo = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const openModal = () => {
-        setIsOpen(true);
-    };
+  const [isOpen, setIsOpen] = useState(false);
+  const openModal = () => {
+    setIsOpen(true);
+  };
 
-    const closeModal = () => {
-        setIsOpen(false);
-    };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div>
       <Title>ToDo</Title>
       <TodoTemplate>
-          <SubTodoTitle/>
-          <TodoInput/>
-          <TodoList/>
+        <SubTodoTitle />
+        <TodoInput />
+        <TodoList />
       </TodoTemplate>
-
-      {/*<MyCalendar />*/}
-      {/*<AddBtn>*/}
-      {/*  <CgAdd onClick={openModal} size="20px" />*/}
-      {/*</AddBtn>*/}
-      {/*  {isOpen ? <InputModal isOpen={openModal} close={closeModal} /> : null}*/}
-      {/*<TodoTemplate>*/}
-
-      {/*  <TodoList />*/}
-      {/*</TodoTemplate>*/}
     </div>
   );
 };

@@ -11,8 +11,6 @@ const MyCalendar = () => {
     </SubTitle>
   );
 
-  console.log("today : ", startDate.getMonth()+1, "월 ", startDate.getDate(),"일");
-  console.log(startDate);
   return (
     <DatePicker
       selected={startDate}

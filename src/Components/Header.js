@@ -1,8 +1,8 @@
-import { IconBox, Label, MenuBar, UserBox } from "../Styled/todo/header-styled";
+import { IconBox, Label, MenuBar, UserBox } from "../Styled/header/header-styled";
 import { Link } from "react-router-dom";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import "../Styled/todo/header-styled.css";
+import "../Styled/header/header-styled.css";
 import {logout} from "../reducer/login";
 import {CgGirl} from "react-icons/cg"
 const MenuItem = ({onClick, children, to }) => (

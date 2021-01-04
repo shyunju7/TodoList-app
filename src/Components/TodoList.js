@@ -1,7 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
 import { useSelector } from "react-redux";
-import { SubTitle, SubTitleBar } from "../Styled/todo/todolist-styled";
 
 const TodoList = () => {
   const user = useSelector((state) => state.loginReducer.loginUser);

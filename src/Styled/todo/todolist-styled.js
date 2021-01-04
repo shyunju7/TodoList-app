@@ -13,4 +13,8 @@ export const SubTitle = styled.div`
   margin-left: 2px;
   cursor: pointer;
   background-color: #fcd5ce;
+  &:hover,
+  &:active {
+    background: #f7c8bb;
+  }
 `;

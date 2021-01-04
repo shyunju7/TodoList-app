@@ -17,10 +17,9 @@ export const Title = styled.h1`
 `;
 
 export const Date = styled.h2`
- 
   font-size: 40px;
   display: inline;
-  margin-left: 10px;
+  margin-left: 20px;
   padding-top: 5px;
   padding-bottom: 10px;
   color: #33364d;
