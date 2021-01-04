@@ -10,8 +10,8 @@ import { todoInsert } from "../reducer/todo";
 const TodoInput = () => {
   const [todoInput, setTodoInput] = useState("");
   const userId = useSelector((state) => state.loginReducer.loginUser);
-  let nextId = useRef(3);
-  //const randomNum = Math.random().toString(36).substr(2,11).toUpperCase();
+  const randomNum = Math.random().toString(36).substr(2,11).toUpperCase();
+  let id = "I" + randomNum;
   const dispatch = useDispatch();
 
   const onChangeInput = (e) => {
@@ -34,8 +34,7 @@ const TodoInput = () => {
       return;
     }
 
-    dispatch(todoInsert(userId, nextId.current, todoInput));
-    nextId.current += 1;
+    dispatch(todoInsert(userId, id, "2021/01/01", todoInput));
     onRemove();
   };
 

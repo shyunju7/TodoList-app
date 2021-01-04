@@ -27,3 +27,9 @@ export const SubTitle = styled.h3`
   color: #000000;
   font-family: Consolas;
 `;
+
+export const AddBtn = styled.h1`
+  display : inline;
+  padding-left : 35px;
+  cursor : pointer;
+`;

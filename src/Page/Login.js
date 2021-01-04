@@ -62,7 +62,7 @@ const Login = () => {
       } else if (findUser.userPw === userPw) {
         alert("로그인 성공!");
         dispatch(login(userId));
-        dispatch(todoCall(userId));
+        //dispatch(todoCall(userId));
       }
     }
   };

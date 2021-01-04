@@ -28,6 +28,7 @@ const Header = () => {
       </UserBox>
       <MenuItem to="/myPage">MyPage</MenuItem>
       <MenuItem to="/">MyTodo</MenuItem>
+        <MenuItem to="/teamTodo">TeamTodo</MenuItem>
       <MenuItem to="/mycalendar">MyCalendar</MenuItem>
       <div className="logout-box">
         <label className="logout" onClick={onClickLogout}>Logout</label>

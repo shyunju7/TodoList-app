@@ -9,6 +9,7 @@ import { registerUser } from "../reducer/user";
 import {Title} from "../Styled/todo/common-styled";
 import {Button, Label, Input} from "../Styled/login/commonStyled";
 
+
 const SignUp = ({ history }) => {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
@@ -71,6 +72,7 @@ const SignUp = ({ history }) => {
   }, [setUserId, setUserPw, setConfirmPw, setTeamId]);
 
   const createUser = useCallback(() => {
+
     if (userId.length == 0 || userPw.length == 0) {
       alert("모든 입력란을 입력해주세요!");
       return;
@@ -113,7 +115,6 @@ const SignUp = ({ history }) => {
           value={teamId}
           required
         />
-
         <br />
         <Label>비밀번호</Label>
         <Input

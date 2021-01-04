@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import Header from "../Components/Header";
 import MyCalendar from "../Page/MyCalendar";
 import MyTodo from "../Page/MyTodo";
+import TeamTodo from "../Page/TeamTodo";
 const AppRouter = () => {
   const isLogin = useSelector((state) => state.loginReducer.isLogin);
 
@@ -23,6 +24,7 @@ const AppRouter = () => {
         <Header />
         <Switch>
           <Route component={MyTodo} path="/" exact={true} />
+          <Route component={TeamTodo} path="/teamTodo" />
           <Route component={MyCalendar} path="/mycalendar"  />
           <Route component={MyPage} path="/mypage" />
           <Route component={ModifyMyInfo} path="/modifymyinfo" />

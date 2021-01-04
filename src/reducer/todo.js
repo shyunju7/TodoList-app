@@ -6,13 +6,14 @@ import {
   UPDATE_TODO,
 } from "../action/todo";
 
-export const todoInsert = (userId, id, text) => {
+export const todoInsert = (userId, id, registrationDate, text) => {
+
   return {
     type: INSERT_TODO,
     payload: {
-      userId: userId,
-      isShared: false,
       id: id,
+      writer: userId,
+      registrationDate: registrationDate,
       text: text,
       isCompleted: false,
     },
@@ -43,24 +44,24 @@ export const todoDelete = (id) => {
 export const todoCall = (userId) => {
   return {
     type: CALL_TODO,
-    payload: { userId: userId },
+    payload: { writer: userId },
   };
 };
 
 const initState = {
   todos: [
     {
-      userId: "admin",
-      isShared: false,
-      id: 1,
-      text: "TODOLIST 만들기",
+      id: "I05234",
+      writer: "admin",
+      registrationDate: "2021/01/01",
+      text: "TODOLIST INDIVIDUAL",
       isCompleted: false,
     },
     {
-      userId: "1",
-      isShared: false,
-      id: 2,
-      text: "TODOLIST 테스트",
+      id: "T05234",
+      writer: "1",
+      registrationDate: "2021/01/01",
+      text: "TODOLIST TEAM",
       isCompleted: false,
     },
   ],
@@ -72,9 +73,9 @@ export default function todoReducer(state = initState, { type, payload }) {
       return {
         ...state,
         todos: state.todos.concat({
-          userId: payload.userId,
-          isShared: false,
           id: payload.id,
+          writer: payload.writer,
+          registrationDate: payload.registrationDate,
           text: payload.text,
           isCompleted: false,
         }),
@@ -103,7 +104,7 @@ export default function todoReducer(state = initState, { type, payload }) {
     case CALL_TODO:
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.userId === payload.userId),
+        todos: state.todos.filter((todo) => todo.writer === payload.userId),
       };
     default:
       return { ...state };
