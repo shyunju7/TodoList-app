@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../Styled/modals.scss";
+import "../Styled/modal/modals.scss";
 import { Input } from "../Styled/todo/todoInput-styled";
 import { useDispatch, useSelector } from "react-redux";
 import { todoInsert } from "../reducer/todo";

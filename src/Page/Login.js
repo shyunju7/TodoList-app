@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
-import { Div, Button } from "../Styled/login/commonStyled";
+import { Div, Button } from "../Styled/login/common-styled";
 import { Link } from "react-router-dom";
-import { Input, Label } from "../Styled/login/commonStyled";
+import { Input, Label } from "../Styled/login/common-styled";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../reducer/login";
 import "../Styled/login/login.css";

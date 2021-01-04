@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import { Snackbar } from "../Styled/ToastStyled";
+import { Snackbar } from "../Styled/toast/toast-styled";
 
 const Toast = ({isActive, setIsActive, msg}) => {
 

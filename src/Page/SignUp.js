@@ -1,13 +1,13 @@
 import React, { useCallback, useRef, useState, useEffect } from "react";
-import { Div } from "../Styled/login/commonStyled";
+import { Div } from "../Styled/login/common-styled";
 import {
   ErrorMsg,
   InputDiv,
-} from "../Styled/login/SignUpStyled";
+} from "../Styled/login/signUp-styled";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../reducer/user";
 import {Title} from "../Styled/todo/common-styled";
-import {Button, Label, Input} from "../Styled/login/commonStyled";
+import {Button, Label, Input} from "../Styled/login/common-styled";
 
 
 const SignUp = ({ history }) => {

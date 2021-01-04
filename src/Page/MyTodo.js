@@ -5,7 +5,7 @@ import TodoList from "../Components/TodoList";
 import { AddBtn, Title } from "../Styled/todo/common-styled";
 import MyCalendar from "./MyCalendar";
 import { CgAdd } from "react-icons/cg";
-import InputModal from "../Components/Modal";
+import InputModal from "../Components/InputModal";
 const MyTodo = () => {
     const [isOpen, setIsOpen] = useState(false);
     const openModal = () => {
@@ -24,10 +24,10 @@ const MyTodo = () => {
         <CgAdd onClick={openModal} size="20px" />
       </AddBtn>
         {isOpen ? <InputModal isOpen={openModal} close={closeModal} /> : null}
-      <TodoTemplate>
+      {/*<TodoTemplate>*/}
 
-        <TodoList />
-      </TodoTemplate>
+      {/*  <TodoList />*/}
+      {/*</TodoTemplate>*/}
     </div>
   );
 };

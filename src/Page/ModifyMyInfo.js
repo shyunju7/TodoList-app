@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Button, Text } from "../Styled/login/commonStyled";
+import { Button, Text } from "../Styled/login/common-styled";
 import { useSelector, useDispatch } from "react-redux";
 import { modifyPw } from "../reducer/user";
 import {withRouter} from "react-router-dom";
@@ -29,8 +29,8 @@ const ModifyMyInfo = ({history}) => {
   return (
     <div>
       <Text>PASSWORD: </Text>
-      <input name="userPw" value={userPw} onChange={onChange}></input>
-      <Button onClick={modifyUserInfo}> 저장 </Button>
+      <input name="userPw" type="password" value={userPw} onChange={onChange}></input>
+      <button onClick={modifyUserInfo}> 저장 </button>
     </div>
   );
 };
