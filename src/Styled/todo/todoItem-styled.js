@@ -4,8 +4,8 @@ export const TodoItemBox = styled.div`
   display: flex;
   outline: none;
   border: none;
-  margin: 0 1rem;
-  padding: 1rem;
+  margin: 0 2rem;
+  padding: 1rem  1rem 1rem 0;
   border-bottom: 1px solid #eddcd2;
 `;
 

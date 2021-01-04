@@ -3,9 +3,8 @@ import styled from "styled-components";
 export const TodoInputBox = styled.div`
   outline: none;
   border: none;
-  padding-left: 1rem;
   display: flex;
-  margin: 0 1rem;
+  margin: 0 2rem;
 `;
 
 export const Input = styled.input`

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const MenuBar = styled.div`
   width: 300px;
   height: 100vh;
+  margin-right: 2rem;
   float: left;
   background: #33364d;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);

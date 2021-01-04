@@ -5,13 +5,13 @@ import { useSelector } from "react-redux";
 const TodoList = () => {
   const user = useSelector((state) => state.loginReducer.loginUser);
   const todos = useSelector((state) => state.todoReducer.todos);
-
+  console.log(todos.length);
   return (
-      <div>
-        {todos.map((todo) =>
-          todo.writer === user ? <TodoItem key={todo.id} todo={todo} /> : null
-        )}
-      </div>
+    <div>
+      {todos.map((todo) =>
+        todo.writer === user ? <TodoItem key={todo.id} todo={todo} /> : null
+      )}
+    </div>
   );
 };
 

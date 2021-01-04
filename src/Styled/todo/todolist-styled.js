@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const SubTitleBar = styled.div`
-  padding-left: 1rem;
-  margin: 0.5rem 1rem;
+  
+  margin: 0.5rem 0;
   display: flex;
 `;
 
