@@ -6,11 +6,11 @@ import {
 } from "../Styled/todo/todoInput-styled";
 import { useDispatch, useSelector } from "react-redux";
 import { todoInsert } from "../reducer/todo";
-
+import { VscAdd } from "react-icons/vsc";
 const TodoInput = () => {
   const [todoInput, setTodoInput] = useState("");
   const userId = useSelector((state) => state.loginReducer.loginUser);
-  const randomNum = Math.random().toString(36).substr(2,11).toUpperCase();
+  const randomNum = Math.random().toString(36).substr(2, 11).toUpperCase();
   let id = "I" + randomNum;
   const dispatch = useDispatch();
 
@@ -44,9 +44,9 @@ const TodoInput = () => {
         onChange={onChangeInput}
         onKeyPress={onKeyPress}
         value={todoInput}
-        placeholder="할 일을 입력하세요!"
+        placeholder="new Todo"
       />
-      <AddButton onClick={addTodo}>추가</AddButton>
+      <AddButton onClick={addTodo}><VscAdd/></AddButton>
     </TodoInputBox>
   );
 };

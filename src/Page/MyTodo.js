@@ -6,6 +6,7 @@ import { AddBtn, Title } from "../Styled/todo/common-styled";
 import MyCalendar from "./MyCalendar";
 import { CgAdd } from "react-icons/cg";
 import InputModal from "../Components/InputModal";
+import SubTodoTitle from "../Components/SubTitleBar";
 const MyTodo = () => {
     const [isOpen, setIsOpen] = useState(false);
     const openModal = () => {
@@ -18,12 +19,18 @@ const MyTodo = () => {
 
   return (
     <div>
-      <Title>MY TODO</Title>
-      <MyCalendar />
-      <AddBtn>
-        <CgAdd onClick={openModal} size="20px" />
-      </AddBtn>
-        {isOpen ? <InputModal isOpen={openModal} close={closeModal} /> : null}
+      <Title>ToDo</Title>
+      <TodoTemplate>
+          <SubTodoTitle/>
+          <TodoInput/>
+          <TodoList/>
+      </TodoTemplate>
+
+      {/*<MyCalendar />*/}
+      {/*<AddBtn>*/}
+      {/*  <CgAdd onClick={openModal} size="20px" />*/}
+      {/*</AddBtn>*/}
+      {/*  {isOpen ? <InputModal isOpen={openModal} close={closeModal} /> : null}*/}
       {/*<TodoTemplate>*/}
 
       {/*  <TodoList />*/}

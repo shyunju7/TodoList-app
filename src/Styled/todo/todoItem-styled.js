@@ -1,6 +1,9 @@
 import styled from "styled-components";
+
 export const TodoItemBox = styled.div`
   display: flex;
+  outline: none;
+  border: none;
   margin: 0 1rem;
   padding: 1rem;
   border-bottom: 1px solid #eddcd2;

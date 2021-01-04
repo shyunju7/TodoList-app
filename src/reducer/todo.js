@@ -1,5 +1,7 @@
 import {
-  CALL_TODO,
+  CALL_MY_TODO,
+  CALL_TEAM_TODO,
+  CALL_ALL_TODO,
   DELETE_TODO,
   INSERT_TODO,
   TOGGLE_TODO,
@@ -7,7 +9,6 @@ import {
 } from "../action/todo";
 
 export const todoInsert = (userId, id, registrationDate, text) => {
-
   return {
     type: INSERT_TODO,
     payload: {
@@ -41,13 +42,26 @@ export const todoDelete = (id) => {
   };
 };
 
-export const todoCall = (userId) => {
+export const myTodoCall = (userId) => {
   return {
-    type: CALL_TODO,
+    type: CALL_MY_TODO,
     payload: { writer: userId },
   };
 };
 
+export const teamTodoCall = (TeamId) => {
+  return {
+    type: CALL_TEAM_TODO,
+    payload: { TeamId: TeamId },
+  };
+};
+
+export const allTodoCall = (userId, teamId) => {
+  return {
+    type: CALL_ALL_TODO,
+    payload: { writer: userId, teamId: teamId },
+  };
+};
 const initState = {
   todos: [
     {
@@ -101,11 +115,21 @@ export default function todoReducer(state = initState, { type, payload }) {
         ...state,
         todos: state.todos.filter((todo) => todo.id !== payload.id),
       };
-    case CALL_TODO:
+    case CALL_MY_TODO:
       return {
         ...state,
         todos: state.todos.filter((todo) => todo.writer === payload.userId),
       };
+    case CALL_TEAM_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.teamId === payload.teamId),
+      }
+    case CALL_ALL_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter()
+      }
     default:
       return { ...state };
   }

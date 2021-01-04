@@ -1,12 +1,9 @@
 import styled from "styled-components";
 
 export const Template = styled.div`
-  margin-top: 5rem;
-  margin-left: auto;
-  margin-right: auto;
-  width: 600px;
-  background-color: #f9fafe;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  outline: none;
+  border: none;
+  padding-left: 1rem;
 `;
 
 export const Title = styled.h1`
@@ -19,12 +16,22 @@ export const Title = styled.h1`
   font-family: Consolas;
 `;
 
+export const Date = styled.h2`
+ 
+  font-size: 40px;
+  display: inline;
+  margin-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  color: #33364d;
+  font-family: Consolas;
+`;
+
 export const SubTitle = styled.h3`
   display: inline;
-  margin-left: 3%;
   margin-right : 1%;
   font-size: 20px;
-  color: #000000;
+  color: #6c757d;
   font-family: Consolas;
 `;
 
