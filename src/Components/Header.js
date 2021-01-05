@@ -23,7 +23,7 @@ const Header = () => {
   return (
     <MenuBar>
       <UserBox>
-        <IconBox><CgGirl size="80px" color="#343a40"/></IconBox>
+        <IconBox><CgGirl size="60px" color="#343a40"/></IconBox>
         <Label>{userId}</Label>
       </UserBox>
       <MenuItem to="/myPage">MyPage</MenuItem>

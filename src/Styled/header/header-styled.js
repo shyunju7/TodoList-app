@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MenuBar = styled.div`
-  width: 300px;
+  width: 250px;
   height: 100vh;
   margin-right: 2rem;
   float: left;
@@ -22,14 +22,14 @@ export const IconBox = styled.div`
   margin: 5px auto;
   align-items: center;
   display: flex;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   border-radius: 50px;
   background: #ffffff;
 `;
 
 export const Label = styled.label`
   color: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
   font-family: Consolas;
 `;

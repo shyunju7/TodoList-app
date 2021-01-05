@@ -1,12 +1,32 @@
-import React from "react";
-import { SubTitle, SubTitleBar } from "../Styled/todo/todolist-styled";
+import React, { useState } from "react";
+import {
+    AddSubTitle,
+    SubTitle,
+    SubTitleBar,
+} from "../Styled/todo/todolist-styled";
 
 const SubTodoTitle = () => {
+  const [subTitle, setSubTitle] = useState("");
+  const [readOnly, setReadOnly] = useState(true);
+  const onChange = (e) => {
+    setSubTitle(e.target.value);
+  };
+
+  const modifySubTitle = (e) => {
+    setReadOnly(false);
+  };
+
   return (
     <SubTitleBar>
-      <SubTitle>My Todo</SubTitle>
-      <SubTitle>Team Todo</SubTitle>
-      <SubTitle>All Todo</SubTitle>
+      <SubTitle
+        onChange={onChange}
+        readOnly={readOnly}
+        onDoubleClick={modifySubTitle}
+        value={subTitle}
+        onBlur={() => setReadOnly(true)}
+      />
+
+      <AddSubTitle>add Todo</AddSubTitle>
     </SubTitleBar>
   );
 };

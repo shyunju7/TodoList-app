@@ -4,13 +4,13 @@ import MyCalendar from "../Page/MyCalendar";
 
 const TodoTemplate = ({ children }) => {
   return (
-    <div>
+    <Template>
       <Date> Today </Date>
       <SubTitle>
         <MyCalendar />
       </SubTitle>
       {children}
-    </div>
+    </Template>
   );
 };
 
