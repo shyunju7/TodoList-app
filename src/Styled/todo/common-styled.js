@@ -2,8 +2,14 @@ import styled from "styled-components";
 
 export const Template = styled.div`
   outline: none;
-  border: none;
-  padding-left: 1rem;
+  border: 1px solid #eddcd2;
+  width: 290px;
+  display: column;
+  margin-left: 250px;
+  
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 
 export const Title = styled.h1`

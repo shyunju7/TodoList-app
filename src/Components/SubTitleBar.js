@@ -25,8 +25,6 @@ const SubTodoTitle = () => {
         value={subTitle}
         onBlur={() => setReadOnly(true)}
       />
-
-      <AddSubTitle>add Todo</AddSubTitle>
     </SubTitleBar>
   );
 };

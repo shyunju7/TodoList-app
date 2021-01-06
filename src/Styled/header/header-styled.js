@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const MenuBar = styled.div`
-  width: 250px;
+  width: 200px;
   height: 100vh;
   margin-right: 2rem;
   float: left;
@@ -33,3 +33,8 @@ export const Label = styled.label`
   font-size: 15px;
   font-family: Consolas;
 `;
+
+export const AddBtn = styled.button`
+  margin-left:100px;
+`;
+

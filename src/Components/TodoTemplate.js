@@ -5,10 +5,7 @@ import MyCalendar from "../Page/MyCalendar";
 const TodoTemplate = ({ children }) => {
   return (
     <Template>
-      <Date> Today </Date>
-      <SubTitle>
-        <MyCalendar />
-      </SubTitle>
+
       {children}
     </Template>
   );

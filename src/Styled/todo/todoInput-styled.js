@@ -4,7 +4,9 @@ export const TodoInputBox = styled.div`
   outline: none;
   border: none;
   display: flex;
-  margin: 0 2rem;
+  margin: 0 1rem;
+  width: 250px;
+  height: 25px;
 `;
 
 export const Input = styled.input`
@@ -17,14 +19,17 @@ export const Input = styled.input`
 `;
 
 export const AddButton = styled.button`
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  
   outline: none;
   border: none;
-  border-radius: 1%;
   background-color: #F28366;
-  padding: 1rem 1rem;
   color: #ffffff;
-  font-size: 15px;
   cursor: pointer;
+  
   &:hover {
     background-color: #E67C60;
     color: #ffffff;
@@ -33,4 +38,5 @@ export const AddButton = styled.button`
     background-color: #E67C60;
     color: #ffffff;
   }
+
 `;

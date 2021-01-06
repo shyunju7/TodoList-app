@@ -1,8 +1,7 @@
 .menu-item {
   display: block;
-  width: 250px;
+  width: 185px;
   background: transparent;
-  text-align: center;
   align-items: center;
   font-size: 15px;
   font-family: Consolas;
@@ -10,7 +9,7 @@
   text-decoration: none;
   color: #ffffff;
   cursor: pointer;
-  padding: 5px 0;
+  padding: 5px 0 0 15px;
 }
 
 .menu-item:hover,
@@ -18,8 +17,9 @@
   background: #3b3e59;
 }
 
+
 .logout-box {
-  padding-top: 300px;
+  padding-top: 400px;
 }
 
 .logout {

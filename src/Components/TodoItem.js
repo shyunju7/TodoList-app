@@ -36,9 +36,9 @@ const TodoItem = ({ todo }) => {
     <TodoItemBox>
       <CheckBox onClick={() => dispatch(todoToggle(id))}>
         {isCompleted ? (
-          <FaRegCheckSquare size="25px" color="#84a98c" />
+          <FaRegCheckSquare size="20px" color="#84a98c" />
         ) : (
-          <FaRegSquare size="25px" />
+          <FaRegSquare size="20px" />
         )}
       </CheckBox>
       <TextBox
@@ -52,14 +52,14 @@ const TodoItem = ({ todo }) => {
 
       {!isCompleted ? (
         <Button onClick={updateTodo}>
-          <BiPencil size="25px" color="#a5a58d" />
+          <BiPencil size="20px" color="#a5a58d" />
         </Button>
       ) : (
         <div />
       )}
 
       <Button onClick={() => dispatch(todoDelete(id))}>
-        <TiDeleteOutline size="30px" color="#e56b6f" />
+        <TiDeleteOutline size="25px" color="#e56b6f" />
       </Button>
     </TodoItemBox>
   );

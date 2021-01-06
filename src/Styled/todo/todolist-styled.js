@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
 export const SubTitleBar = styled.div`
-  margin: 0.5rem 0;
+  
   display: flex;
+  margin-top: 60px;
+  margin-left: 248px;
 `;
 
 export const AddSubTitle = styled.div`

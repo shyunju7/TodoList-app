@@ -6,6 +6,7 @@ import {
   INSERT_TODO,
   TOGGLE_TODO,
   UPDATE_TODO,
+  LOAD_DOING_TODO,
 } from "../action/todo";
 
 export const todoInsert = (userId, id, registrationDate, text) => {
@@ -17,6 +18,7 @@ export const todoInsert = (userId, id, registrationDate, text) => {
       registrationDate: registrationDate,
       text: text,
       isCompleted: false,
+      isShared: false,
     },
   };
 };
@@ -49,19 +51,13 @@ export const myTodoCall = (userId) => {
   };
 };
 
-export const teamTodoCall = (TeamId) => {
+export const loadDoingTodo = (id) => {
   return {
-    type: CALL_TEAM_TODO,
-    payload: { TeamId: TeamId },
+    type: LOAD_DOING_TODO,
+    payload: { id: id },
   };
 };
 
-export const allTodoCall = (userId, teamId) => {
-  return {
-    type: CALL_ALL_TODO,
-    payload: { writer: userId, teamId: teamId },
-  };
-};
 const initState = {
   todos: [
     {
@@ -70,13 +66,15 @@ const initState = {
       registrationDate: "2021/01/01",
       text: "TODOLIST INDIVIDUAL",
       isCompleted: false,
+      isShared: false,
     },
     {
       id: "T05234",
-      writer: "1",
+      writer: "admin",
       registrationDate: "2021/01/01",
       text: "TODOLIST TEAM",
       isCompleted: false,
+      isShared: true,
     },
   ],
 };
@@ -92,6 +90,7 @@ export default function todoReducer(state = initState, { type, payload }) {
           registrationDate: payload.registrationDate,
           text: payload.text,
           isCompleted: false,
+          isShared: false,
         }),
       };
     case TOGGLE_TODO:
@@ -120,16 +119,13 @@ export default function todoReducer(state = initState, { type, payload }) {
         ...state,
         todos: state.todos.filter((todo) => todo.writer === payload.userId),
       };
-    case CALL_TEAM_TODO:
+    case LOAD_DOING_TODO:
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.teamId === payload.teamId),
-      }
-    case CALL_ALL_TODO:
-      return {
-        ...state,
-        todos: state.todos.filter()
-      }
+        todos: state.todos.filter(
+          (todo) => todo.id === payload.id && todo.isCompleted == true
+        ),
+      };
     default:
       return { ...state };
   }
