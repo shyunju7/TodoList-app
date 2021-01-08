@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import {
   Button,
   CheckBox,
-  Hr,
   TextBox,
   TodoItemBox,
 } from "../Styled/todo/todoItem-styled";
@@ -12,7 +11,7 @@ import { FaRegSquare, FaRegCheckSquare } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 import { BiPencil } from "react-icons/bi";
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, todoTitleId }) => {
   const { id, text, isCompleted } = todo;
   const [readOnly, setReadOnly] = useState(true);
   const [updateText, setUpdateText] = useState(text);
@@ -34,7 +33,7 @@ const TodoItem = ({ todo }) => {
 
   return (
     <TodoItemBox>
-      <CheckBox onClick={() => dispatch(todoToggle(id))}>
+      <CheckBox onClick={() => dispatch(todoToggle(todoTitleId, id))}>
         {isCompleted ? (
           <FaRegCheckSquare size="20px" color="#84a98c" />
         ) : (
@@ -47,7 +46,7 @@ const TodoItem = ({ todo }) => {
         defaultValue={text}
         checked={isCompleted}
         onChange={onChangeText}
-        onBlur={() => dispatch(todoUpdate(id, updateText))}
+        onBlur={() => dispatch(todoUpdate(todoTitleId, id, updateText))}
       />
 
       {!isCompleted ? (
@@ -58,7 +57,7 @@ const TodoItem = ({ todo }) => {
         <div />
       )}
 
-      <Button onClick={() => dispatch(todoDelete(id))}>
+      <Button onClick={() => dispatch(todoDelete(todoTitleId, id))}>
         <TiDeleteOutline size="25px" color="#e56b6f" />
       </Button>
     </TodoItemBox>

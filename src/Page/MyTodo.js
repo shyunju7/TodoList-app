@@ -5,7 +5,10 @@ import TodoList from "../Components/TodoList";
 import { Date, SubTitle, Template, Title } from "../Styled/todo/common-styled";
 import SubTodoTitle from "../Components/SubTitleBar";
 import MyCalendar from "./MyCalendar";
-const MyTodo = () => {
+const MyTodo = ({ match }) => {
+
+
+
   return (
     <div>
       <Title>ToDo</Title>
@@ -14,13 +17,11 @@ const MyTodo = () => {
       <SubTitle>
         <MyCalendar />
       </SubTitle>
-
       <SubTodoTitle>title</SubTodoTitle>
       <TodoTemplate>
-        <TodoInput />
-        <TodoList />
+        <TodoInput todoTitleId={match.params.id} />
+        <TodoList todoTitleId={match.params.id} />
       </TodoTemplate>
-
     </div>
   );
 };

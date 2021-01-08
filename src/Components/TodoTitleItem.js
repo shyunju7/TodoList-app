@@ -1,15 +1,18 @@
 import React from "react";
-import todo from "../reducer/todo";
-import {TodoTitleItemBox} from "../Styled/todoTitle/todoTitle-styled";
+import { TodoTitleItemBox } from "../Styled/todoTitle/todoTitle-styled";
+import { Link } from "react-router-dom";
 
-const TodoTitleItem = ({todoTitleInfo}) => {
+const TodoTitleItem = ({ todoTitleInfo }) => {
+  const { id, todoTitle, writer } = todoTitleInfo;
 
-    const { id, todoTitle, writer } = todoTitleInfo;
-    return (
-        <div>
-            <TodoTitleItemBox>{todoTitle}</TodoTitleItemBox>
-        </div>
-    );
+  let url = "/todo/" + id;
+  return (
+    <Link to={url}>
+      <TodoTitleItemBox id={id} writer={writer}>
+        {todoTitle}
+      </TodoTitleItemBox>
+    </Link>
+  );
 };
 
 export default TodoTitleItem;

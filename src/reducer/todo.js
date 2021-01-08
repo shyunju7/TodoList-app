@@ -1,18 +1,16 @@
 import {
-  CALL_MY_TODO,
-  CALL_TEAM_TODO,
-  CALL_ALL_TODO,
+  LOAD_TODO,
   DELETE_TODO,
   INSERT_TODO,
   TOGGLE_TODO,
   UPDATE_TODO,
-  LOAD_DOING_TODO,
 } from "../action/todo";
 
-export const todoInsert = (userId, id, registrationDate, text) => {
+export const todoInsert = (titleId, userId, id, registrationDate, text) => {
   return {
     type: INSERT_TODO,
     payload: {
+      titleId: titleId,
       id: id,
       writer: userId,
       registrationDate: registrationDate,
@@ -23,45 +21,41 @@ export const todoInsert = (userId, id, registrationDate, text) => {
   };
 };
 
-export const todoToggle = (id) => {
+export const todoToggle = (titleId, id) => {
   return {
     type: TOGGLE_TODO,
-    payload: { id: id },
+    payload: { id: id, titleId: titleId },
   };
 };
 
-export const todoUpdate = (id, text) => {
+export const todoUpdate = (titleId, id, text) => {
   return {
     type: UPDATE_TODO,
-    payload: { id: id, text: text },
+    payload: { titleId: titleId, id: id, text: text },
   };
 };
 
-export const todoDelete = (id) => {
+export const todoDelete = (titleId, id) => {
   return {
     type: DELETE_TODO,
-    payload: { id: id },
+    payload: { titleId: titleId, id: id },
   };
 };
 
-export const myTodoCall = (userId) => {
+export const todoLoad = (titleId) => {
   return {
-    type: CALL_MY_TODO,
-    payload: { writer: userId },
-  };
-};
-
-export const loadDoingTodo = (id) => {
-  return {
-    type: LOAD_DOING_TODO,
-    payload: { id: id },
+    type: LOAD_TODO,
+    payload: {
+      titleId: titleId,
+    },
   };
 };
 
 const initState = {
   todos: [
     {
-      id: "I05234",
+      titleId: "I05234",
+      id: "dsfasf",
       writer: "admin",
       registrationDate: "2021/01/01",
       text: "TODOLIST INDIVIDUAL",
@@ -69,7 +63,8 @@ const initState = {
       isShared: false,
     },
     {
-      id: "T05234",
+      titleId: "T05234",
+      id: "asdas",
       writer: "admin",
       registrationDate: "2021/01/01",
       text: "TODOLIST TEAM",
@@ -85,6 +80,7 @@ export default function todoReducer(state = initState, { type, payload }) {
       return {
         ...state,
         todos: state.todos.concat({
+          titleId: payload.titleId,
           id: payload.id,
           writer: payload.writer,
           registrationDate: payload.registrationDate,
@@ -97,7 +93,7 @@ export default function todoReducer(state = initState, { type, payload }) {
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === payload.id
+          todo.titleId === payload.titleId && todo.id === payload.id
             ? { ...todo, isCompleted: !todo.isCompleted }
             : todo
         ),
@@ -106,24 +102,23 @@ export default function todoReducer(state = initState, { type, payload }) {
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === payload.id ? { ...todo, text: payload.text } : todo
+          todo.titleId === payload.titleId && todo.id === payload.id
+            ? { ...todo, text: payload.text }
+            : todo
         ),
       };
     case DELETE_TODO:
       return {
         ...state,
-        todos: state.todos.filter((todo) => todo.id !== payload.id),
-      };
-    case CALL_MY_TODO:
-      return {
-        ...state,
-        todos: state.todos.filter((todo) => todo.writer === payload.userId),
-      };
-    case LOAD_DOING_TODO:
-      return {
-        ...state,
         todos: state.todos.filter(
-          (todo) => todo.id === payload.id && todo.isCompleted == true
+          (todo) => todo.titleId === payload.titleId && todo.id !== payload.id
+        ),
+      };
+    case LOAD_TODO:
+      return {
+        ...state,
+        myTodos: state.todos.filter((todo) =>
+          todo.titleId === payload.titleId ? todo : null
         ),
       };
     default:

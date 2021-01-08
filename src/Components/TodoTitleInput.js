@@ -12,6 +12,9 @@ const TodoTitleInput = ({show}) => {
   const userId = useSelector((state) => state.loginReducer.loginUser);
   const dispatch = useDispatch();
 
+  const randomNum = Math.random().toString(36).substr(2, 6).toUpperCase();
+  let id = "T" + randomNum;
+
   const onChange = (e) => {
     setTitle(e.target.value);
   };
@@ -23,7 +26,7 @@ const TodoTitleInput = ({show}) => {
   const onKeyHandler = (e) => {
     if (e.key === "Enter") {
       setReadOnly(true);
-      dispatch(todoTitleInsert("I3423", userId, title, false));
+      dispatch(todoTitleInsert(id, userId, title, false));
       setTitle("");
       show = !show;
       console.log(show);

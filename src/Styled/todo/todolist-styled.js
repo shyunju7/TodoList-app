@@ -20,7 +20,7 @@ export const AddSubTitle = styled.div`
   }
 `;
 
-export const SubTitle = styled.input`
+export const SubTitle = styled.div`
   text-align: center;
   padding: 7px 2px;
   border-radius: 0 10px 0 0;
