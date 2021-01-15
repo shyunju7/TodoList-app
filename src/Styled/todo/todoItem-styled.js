@@ -8,7 +8,14 @@ export const TodoItemBox = styled.div`
   border-bottom: 1px solid #eddcd2;
   width: 250px;
   align-items: center;
-  
+`;
+
+export const TodoLi = styled.li`
+  display: flex;
+  border-bottom: 1px solid #eddcd2;
+  margin-right: 3rem;
+  padding: 3px 0;
+  font-size: 13px;
 `;
 
 export const CheckBox = styled.div`

@@ -1,6 +1,5 @@
 import React from "react";
-import { Date, SubTitle, Template, Title } from "../Styled/todo/common-styled";
-import MyCalendar from "../Page/MyCalendar";
+import { Template } from "../Styled/todo/common-styled";
 
 const TodoTemplate = ({ children }) => {
   return <Template>{children}</Template>;

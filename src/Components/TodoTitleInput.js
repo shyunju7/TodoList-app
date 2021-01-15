@@ -28,8 +28,8 @@ const TodoTitleInput = ({show}) => {
       setReadOnly(true);
       dispatch(todoTitleInsert(id, userId, title, false));
       setTitle("");
+
       show = !show;
-      console.log(show);
     }
   };
 

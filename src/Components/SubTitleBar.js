@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { SubTitle, SubTitleBar } from "../Styled/todo/todolist-styled";
 
-const SubTodoTitle = () => {
-  return <SubTitleBar>todo</SubTitleBar>;
+const SubTodoTitle = ({subTitle}) => {
+  return <SubTitleBar><SubTitle>{subTitle}</SubTitle></SubTitleBar>;
 };
 
 export default SubTodoTitle;

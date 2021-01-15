@@ -7,6 +7,7 @@ export const TodoInputBox = styled.div`
   margin: 0 1rem;
   width: 250px;
   height: 25px;
+  margin-bottom: 1px;
 `;
 
 export const Input = styled.input`
