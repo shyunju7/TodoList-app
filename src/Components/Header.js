@@ -13,6 +13,7 @@ import { logout } from "../reducer/login";
 import { CgGirl } from "react-icons/cg";
 import TodoTitleInput from "./TodoTitleInput";
 import TodoTitleList from "./TodoTitleList";
+import todo from "../reducer/todo";
 const MenuItem = ({ onClick, children, to }) => (
   <Link to={to} className="menu-item" onClick={onClick}>
     {children}
@@ -26,7 +27,8 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const onClickLogout = () => {
-    dispatch(logout());
+      dispatch(logout());
+
   };
 
   const onClickAddBtn = () => {

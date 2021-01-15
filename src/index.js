@@ -10,8 +10,8 @@ import persistedReducer from "./reducer";
 
 const store = createStore(persistedReducer);
 const persistor = persistStore(store);
-console.log(store.getState());
-console.log(persistor);
+console.log("store>> ",store.getState());
+console.log("persistor>> ",persistor);
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>

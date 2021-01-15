@@ -9,7 +9,7 @@ import todoTitleReducer from "./todoTitle";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["userReducer","todoReducer"],
+  whitelist: [userReducer,todoReducer],
 };
 
 const rootReducer = combineReducers({

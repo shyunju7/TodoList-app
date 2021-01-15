@@ -5,9 +5,9 @@ import TodoList from "../Components/TodoList";
 import { Date, SubTitle, Template, Title } from "../Styled/todo/common-styled";
 import SubTodoTitle from "../Components/SubTitleBar";
 import MyCalendar from "./MyCalendar";
+import { useSelector } from "react-redux";
 const MyTodo = ({ match }) => {
-
-
+  const userId = useSelector((state) => state.loginReducer.loginUser);
 
   return (
     <div>
@@ -20,7 +20,7 @@ const MyTodo = ({ match }) => {
       <SubTodoTitle>title</SubTodoTitle>
       <TodoTemplate>
         <TodoInput todoTitleId={match.params.id} />
-        <TodoList todoTitleId={match.params.id} />
+        <TodoList key={userId} todoTitleId={match.params.id} />
       </TodoTemplate>
     </div>
   );

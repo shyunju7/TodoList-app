@@ -111,7 +111,9 @@ export default function todoReducer(state = initState, { type, payload }) {
       return {
         ...state,
         todos: state.todos.filter(
-          (todo) => todo.titleId === payload.titleId && todo.id !== payload.id
+          (todo) =>
+            (todo.titleId === payload.titleId && todo.id !== payload.id) ||
+            todo.titleId !== payload.titleId
         ),
       };
     case LOAD_TODO:
