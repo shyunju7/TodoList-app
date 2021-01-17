@@ -27,7 +27,6 @@ const TodoTitleInput = ({ show, setShow }) => {
       setReadOnly(true);
       dispatch(todoTitleInsert(id, userId, title, false));
       setTitle("");
-
       setShow(!show);
     }
   };

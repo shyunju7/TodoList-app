@@ -25,9 +25,14 @@ const useMyTodo = (todoTitleId) => {
 
 const MyTodo = ({ match }) => {
   const titleId = match.params.id;
+  const myTodoTitleList = useSelector(
+    (state) => state.todoTitleReducer.todoTitles
+  );
   const myTodoList = useMyTodo(titleId);
   const DoingList = myTodoList.filter((todo) => !todo.isCompleted);
   const DoneList = myTodoList.filter((todo) => todo.isCompleted);
+  localStorage.setItem("myTodoTitles", JSON.stringify(myTodoTitleList));
+  localStorage.setItem("myTodos", JSON.stringify(myTodoList));
 
   return (
     <div>

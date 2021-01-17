@@ -5,7 +5,6 @@ import {
 } from "../action/todoTitle";
 
 export const todoTitleInsert = (id, userId, todoTitle, isShared) => {
-
   console.log(userId);
   return {
     type: INSERT_TODOTITLE,
@@ -36,20 +35,7 @@ export const todoTitleDelete = (id) => {
 };
 
 const initState = {
-  todoTitles: [
-    {
-      id: "I05234",
-      writer: "admin",
-      todoTitle: "개인 투두리스트",
-      isShared: false,
-    },
-    {
-      id: "T05234",
-      writer: "admin",
-      todoTitle: "동아리 투두리스트",
-      isShared: true,
-    },
-  ],
+  todoTitles: JSON.parse(localStorage.getItem("myTodoTitles")) || [],
 };
 
 export default function todoTitleReducer(state = initState, { type, payload }) {

@@ -3,13 +3,13 @@ import userReducer from "./user";
 import loginReducer from "./login";
 import todoReducer from "./todo";
 import storage from "redux-persist/lib/storage";
-import {persistReducer} from "redux-persist";
+import { persistReducer } from "redux-persist";
 import todoTitleReducer from "./todoTitle";
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: [userReducer,todoReducer],
+  whitelist: [userReducer, todoReducer, todoTitleReducer],
 };
 
 const rootReducer = combineReducers({
@@ -19,4 +19,4 @@ const rootReducer = combineReducers({
   todoTitleReducer,
 });
 
-export default persistReducer(persistConfig,rootReducer);
+export default persistReducer(persistConfig, rootReducer);

@@ -52,26 +52,7 @@ export const todoLoad = (titleId) => {
 };
 
 const initState = {
-  todos: [
-    {
-      titleId: "I05234",
-      id: "dsfasf",
-      writer: "admin",
-      registrationDate: "2021/01/01",
-      text: "TODOLIST INDIVIDUAL",
-      isCompleted: false,
-      isShared: false,
-    },
-    {
-      titleId: "T05234",
-      id: "asdas",
-      writer: "admin",
-      registrationDate: "2021/01/01",
-      text: "TODOLIST TEAM",
-      isCompleted: false,
-      isShared: true,
-    },
-  ],
+  todos: JSON.parse(localStorage.getItem("myTodos")) || [],
 };
 
 export default function todoReducer(state = initState, { type, payload }) {
