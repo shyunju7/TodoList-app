@@ -2,10 +2,9 @@ import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { todoTitleInsert } from "../reducer/todoTitle";
-import {TitleBox, TitleInput} from "../Styled/todoTitle/todoTitle-styled";
+import { TitleBox, TitleInput } from "../Styled/todoTitle/todoTitle-styled";
 
-
-const TodoTitleInput = ({show}) => {
+const TodoTitleInput = ({ show, setShow }) => {
   const [title, setTitle] = useState("");
   const [readOnly, setReadOnly] = useState(false);
 
@@ -29,7 +28,7 @@ const TodoTitleInput = ({show}) => {
       dispatch(todoTitleInsert(id, userId, title, false));
       setTitle("");
 
-      show = !show;
+      setShow(!show);
     }
   };
 

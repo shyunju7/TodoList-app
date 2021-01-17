@@ -9,7 +9,7 @@ export const MenuBar = styled.div`
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6);
 `;
 
-export const UserBox = styled.div`
+export const UserInfoBox = styled.div`
   width: 100px;
   margin: 30px auto;
   justify-contents: center;
@@ -28,13 +28,12 @@ export const IconBox = styled.div`
   background: #ffffff;
 `;
 
-export const Label = styled.label`
+export const UserId = styled.label`
   color: #ffffff;
   font-size: 15px;
   font-family: Consolas;
 `;
 
 export const AddBtn = styled.button`
-  margin-left:100px;
+  margin-left: 100px;
 `;
-

@@ -5,8 +5,7 @@ import { Input, Label } from "../Styled/login/common-styled";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../reducer/login";
 import "../Styled/login/login.css";
-import {Title} from "../Styled/todo/common-styled";
-import {todoCall} from "../reducer/todo";
+import { Title } from "../Styled/todo/common-styled";
 const Login = () => {
   const users = useSelector((state) => state.userReducer.users);
   const dispatch = useDispatch();
@@ -62,7 +61,6 @@ const Login = () => {
       } else if (findUser.userPw === userPw) {
         alert("로그인 성공!");
         dispatch(login(userId));
-        //dispatch(todoCall(userId));
       }
     }
   };
@@ -94,7 +92,9 @@ const Login = () => {
       <Button onClick={onLogin}> 로그인 </Button>
       <br />
       <br />
-      <Link to="/signup" className="signup">회원가입하기</Link>
+      <Link to="/signup" className="signup">
+        회원가입하기
+      </Link>
     </Div>
   );
 };

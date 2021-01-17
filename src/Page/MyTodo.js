@@ -1,23 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import TodoTemplate from "../Components/TodoTemplate";
 import TodoInput from "../Components/TodoInput";
 import TodoList from "../Components/TodoList";
 import {
   Date,
-  DateBox,
   DateText,
-  SubTitle,
-  Template,
   TemplateBox,
   Title,
 } from "../Styled/todo/common-styled";
-import SubTodoTitle from "../Components/SubTitleBar";
 import MyCalendar from "./MyCalendar";
 import { useSelector } from "react-redux";
-import DoingList from "../Components/DoingList";
-import DoneList from "../Components/DoneList";
-const MyTodo = ({ match }) => {
+import List from "../Components/List";
+
+const useMyTodo = (todoTitleId) => {
   const userId = useSelector((state) => state.loginReducer.loginUser);
+  const todos = useSelector((state) => state.todoReducer.todos);
+
+  const newTodo = todos.filter(
+    (todo) => todo.titleId === todoTitleId && todo.writer === userId
+  );
+
+  return newTodo;
+};
+
+const MyTodo = ({ match }) => {
+  const titleId = match.params.id;
+  const myTodoList = useMyTodo(titleId);
+  const DoingList = myTodoList.filter((todo) => !todo.isCompleted);
+  const DoneList = myTodoList.filter((todo) => todo.isCompleted);
+
   return (
     <div>
       <Title>ToDo</Title>
@@ -29,14 +40,16 @@ const MyTodo = ({ match }) => {
 
       <TemplateBox>
         <TodoTemplate>
-          <TodoInput todoTitleId={match.params.id} />
-          <TodoList key={userId} todoTitleId={match.params.id} />
+          <TodoInput todoTitleId={titleId} />
+          <TodoList todoList={myTodoList} todoTitleId={titleId} />
         </TodoTemplate>
+
         <TodoTemplate>
-          <DoingList key={userId} todoTitleId={match.params.id} />
+          <List todoList={DoingList} todoTitleId={titleId} />
         </TodoTemplate>
+
         <TodoTemplate>
-          <DoneList key={userId} todoTitleId={match.params.id} />
+          <List todoList={DoneList} todoTitleId={titleId} />
         </TodoTemplate>
       </TemplateBox>
     </div>

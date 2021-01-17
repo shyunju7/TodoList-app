@@ -11,7 +11,6 @@ import {
 } from "../Styled/myPage/main-styled";
 import ModifyMyInfo from "./ModifyMyInfo";
 
-
 const MyPage = ({ history }) => {
   const users = useSelector((state) => state.userReducer.users);
   const userId = useSelector((state) => state.loginReducer.loginUser);
@@ -43,8 +42,10 @@ const MyPage = ({ history }) => {
       </UserInfoBox>
 
       <SubTitle> 비밀번호 변경하기 </SubTitle>
-      <Button onClick={updatePw}> 비밀번호 변경하기 </Button>
-      {click ? <ModifyMyInfo /> : <div />}
+      <Button show={click} onClick={updatePw}>
+        비밀번호 변경하기
+      </Button>
+      {click ? <ModifyMyInfo show={click} setShow={setClicked} /> : <div />}
 
       <SubTitle> 회원 탈퇴하기 </SubTitle>
       <Button onClick={unsubscribe}> 회원 탈퇴하기 </Button>

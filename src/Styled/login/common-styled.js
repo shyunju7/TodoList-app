@@ -46,4 +46,5 @@ export const Input = styled.input`
 
 export const Text = styled.label`
   font-size: 12px;
+  margin: 0 2rem;
 `;
