@@ -1,27 +1,34 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import {
   AddButton,
   Input,
   TodoInputBox,
 } from "../Styled/todo/todoInput-styled";
 import { useDispatch, useSelector } from "react-redux";
-import {todoInsert, todoLoad} from "../reducer/todo";
+import { todoInsert } from "../reducer/todo";
 import { VscAdd } from "react-icons/vsc";
 
-const TodoInput = ({todoTitleId}) => {
+const TodoInput = ({ todoTitleId }) => {
   const [todoInput, setTodoInput] = useState("");
   const userId = useSelector((state) => state.loginReducer.loginUser);
   const randomNum = Math.random().toString(36).substr(2, 5).toUpperCase();
   let id = todoTitleId + randomNum;
   const dispatch = useDispatch();
 
-  const onChangeInput = (e) => {
-    setTodoInput(e.target.value);
-  };
+  const today = new Date();
+  const registrationDate =
+    today.getFullYear() + "/" + today.getMonth() + 1 + "/" + today.getDate();
 
-  const onRemove = () => {
+  const onChangeInput = useCallback(
+    (e) => {
+      setTodoInput(e.target.value);
+    },
+    [todoInput]
+  );
+
+  const onRemove = useCallback(() => {
     setTodoInput("");
-  };
+  }, [setTodoInput]);
 
   const onKeyPress = (e) => {
     if (e.key === "Enter") {
@@ -35,8 +42,7 @@ const TodoInput = ({todoTitleId}) => {
       return;
     }
 
-    console.log(todoTitleId,userId,id,todoInput);
-    dispatch(todoInsert(todoTitleId, userId, id, "2021/01/01", todoInput));
+    dispatch(todoInsert(todoTitleId, userId, id, registrationDate, todoInput));
     onRemove();
   };
 
@@ -56,6 +62,3 @@ const TodoInput = ({todoTitleId}) => {
 };
 
 export default TodoInput;
-
-
-
