@@ -11,6 +11,7 @@ import {
 import MyCalendar from "./MyCalendar";
 import { useSelector } from "react-redux";
 import List from "../Components/List";
+import {SubTitle} from "../Styled/myPage/main-styled";
 
 const useMyTodo = (todoTitleId) => {
   const userId = useSelector((state) => state.loginReducer.loginUser);
@@ -45,16 +46,20 @@ const MyTodo = ({ match }) => {
 
       <TemplateBox>
         <TodoTemplate>
+          <SubTitle>Todo</SubTitle>
           <TodoInput todoTitleId={titleId} />
           <TodoList todoList={myTodoList} todoTitleId={titleId} />
         </TodoTemplate>
 
+
         <TodoTemplate>
-          <List todoList={DoingList} todoTitleId={titleId} />
+          <SubTitle>Doing</SubTitle>
+          <List todoList={DoingList} todoTitleId={titleId} isCompleted={false} />
         </TodoTemplate>
 
         <TodoTemplate>
-          <List todoList={DoneList} todoTitleId={titleId} />
+          <SubTitle>Done</SubTitle>
+          <List todoList={DoneList} todoTitleId={titleId} isCompleted={true} />
         </TodoTemplate>
       </TemplateBox>
     </div>
